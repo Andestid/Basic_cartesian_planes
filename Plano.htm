@@ -1,0 +1,123 @@
+
+<html>
+    <link rel="stylesheet" type="text/css" href="CSS/estilos.css" media="screen" />
+    <head>
+   
+        <title>Plano Cartesiano</title>
+   
+        <script >
+   
+           function calcular()       
+   
+            {        
+                      x1=document.funcion[0].value,
+   
+                      y1=document.funcion[1].value,
+   
+                      x2=document.funcion[2].value,  
+                      
+                      y2=document.funcion[3].value,
+
+                      cuadrante1 = "";
+
+                      if (x1>0 && y1>0){
+                      cuadrante1 = "Punto en el primer cuadrante";  
+                      } else {
+                        if (x1>0 && y1<0){
+                            cuadrante1 = "Punto en el segundo cuadrante";  
+                        } else {
+                            if (x1<0 && y1<0){
+                            cuadrante1 = "Punto en el tercer cuadrante"; 
+                            } else {
+                                if (x1<0 && y1>0){
+                                cuadrante1 = "Punto en el cuarto cuadrante";
+                                } else {
+                                    cuadrante1 = "Punto en el origen";
+                                }
+                            }
+                        }
+                      }
+                    
+                          cuadrante2 = "";
+
+                      if (x2>0 && y2>0){
+                      cuadrante2 = "Punto en el primer cuadrante";  
+                      } else {
+                        if (x2>0 && y2<0){
+                            cuadrante2 = "Punto en el segundo cuadrante";  
+                        } else {
+                            if (x2<0 && y2<0){
+                            cuadrante2 = "Punto en el tercer cuadrante"; 
+                            } else {
+                                if (x2<0 && y2>0){
+                                cuadrante2 = "Punto en el cuarto cuadrante";
+                                } else {
+                                    cuadrante2 = "Punto en el origen";
+                                }
+                            }
+                        }
+                      }
+                
+                p = (y2 - y1)/(x2 - x1);     
+                d = Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+                pm1 = (Number(x1)+ Number(x2))/2;
+                pm2 = (Number(y1)+ Number(y2))/2;
+
+                document.funcion[4].value; //boton 
+                document.funcion[5].value= cuadrante1;  //punto X1 Y1
+                document.funcion[6].value= cuadrante2; //punto X2 Y2
+                document.funcion[7].value= p; //Pendiente
+                document.funcion[8].value= d;//distancia entre los dos puntos
+                document.funcion[9].value= pm1;  //punto medio_1
+                document.funcion[10].value= pm2;  //punto medio_2
+               
+   
+           }
+   
+         </script>
+   
+     </head>
+   
+    
+   
+   <body bgcolor=cyan>
+   
+    <br><br><h1><div align="center">Puntos de un plano Cartesiano</div></h1><br><HR><br><br>
+   
+     <form name="funcion">
+   
+         Introduce X1 Y1<BR>
+   
+         X1 = <input class="form-input type=" type="text" size=10>
+   
+         Y1 = <input class="form-input type=" type="text" size=10><BR><BR>
+   
+            Introduce X2 Y2
+            <BR><BR>
+   
+         X2 = <input class="form-input type=" type="text" size=10>
+
+         Y2 = <input class="form-input type=" type="text" size=10> 
+         
+         <br><br>
+   
+         <input type="button" class="btn btn-primary" value="Resultado" OnClick="calcular()">
+         
+         <br>
+         <HR>
+   
+         Cuadrante X1 Y1 = <input class="form-input type=" type="text" size=25> <BR><BR>
+   
+         Cuadrante X2 Y2 = <input class="form-input type=" type="text"  size=25><BR><BR>
+   
+         Pendiente = <input class="form-input type=" type="text" size=10><HR>
+   
+         Distancia entre los dos puntos = <input class="form-input type=" type="text" size=10><BR><BR>
+   
+         Punto medio entre los dos puntos = ( <input class="form-input type=" type="text" size=10> , <input class="form-input type=" type="text" size=10> )
+   
+     </form>
+   
+   </body>
+   
+   </html>
